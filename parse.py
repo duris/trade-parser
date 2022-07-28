@@ -39,9 +39,9 @@ class Trade:
 
 
 rowsToSkip = 0
-filename = '2022-07-21-AccountStatement.csv'
-start_dt = date(2022, 7, 21)
-end_dt = date(2022, 7, 21)
+filename = '2022-07-26-AccountStatement.csv'
+start_dt = date(2022, 7, 26)
+end_dt = date(2022, 7, 26)
 
 
 with open(filename,'rt')as f:
@@ -355,7 +355,7 @@ for trade in sortedTrades:
         + ', HighestEx: '
         + str(trade.highestExitPrice)
         + ', HExP: '
-        + str(round((trade.highestExitPrice-trade.entryPrice)/trade.entryPrice*100, 2)) + "%"                
+        + str(round((trade.highestExitPrice-trade.entryPrice)/trade.lowestEntryPrice*100, 2)) + "%"                
         + ', Length: '
         + str(totalTime)
         + ' Min.'
